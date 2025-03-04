@@ -8,6 +8,19 @@
     <title>Document</title>
 </head>
 <body>
-
+<div>Hello world</div>
 </body>
+<script>
+    console.log('init')
+</script>
+<script src="./package/dist/iife/index.min.js"></script>
+<script>
+    window.VKTBridge.send('LoadingCompleted', { ok: true })
+        .then((bridgeResponse) => {
+            console.log({ bridgeResponse });
+        })
+        .catch((bridgeError) => {
+            console.log({ bridgeError });
+        });
+</script>
 </html>
